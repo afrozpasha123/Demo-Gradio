@@ -123,7 +123,7 @@ with gr.Blocks(css=".gradio-container {max-width: 900px; margin: auto;}") as dem
     gr.Markdown("## Gemini Image Preview Demo (Influencer + Product)")
 
     with gr.Row():
-        api_key = gr.Textbox(label="Google API Key", type="password", placeholder="Enter your x-goog-api-key")
+        api_key = gr.Textbox(label="Google API Key", type="text", placeholder="Enter your x-goog-api-key")
     with gr.Row():
         prompt = gr.Textbox(label="Prompt", lines=2, placeholder="Describe the product placement idea...")
     with gr.Row():
@@ -148,6 +148,4 @@ with gr.Blocks(css=".gradio-container {max-width: 900px; margin: auto;}") as dem
     )
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 7860))
-    demo.launch(server_name="0.0.0.0", server_port=port)
+    demo.launch(debug=True)
